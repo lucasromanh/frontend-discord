@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discord</title>
+  <link rel="stylesheet" type="text/css" href="/static_folder/css/style.css">
+  <script src="https://kit.fontawesome.com/222cea3eed.js"></script>
+</head>
+<body>
+  <div class="servers">
+    <div class="logo">
+      <img src="/static_folder/assets/logo.jpg" alt="Discord" />
+    </div>
+    <div class="server-logo" data-servidorid="1">
+      <span class="message__count">8</span>
+      <img src="/static_folder/assets/user4.jpg" alt="server" />
+    </div>
+    <div class="server-logo" data-servidorid="2">
+      <span class="message__count">50</span>
+      <img src="/static_folder/assets/server2.jpg" alt="server" />
+    </div>
+    <div class="server-logo" data-servidorid="3">
+      <span class="message__count">120</span>
+      <img src="/static_folder/assets/server3.jpg" alt="server" />
+    </div>
+    <div class="server-logo" data-servidorid="4">
+      <span class="message__count">20</span>
+      <img src="/static_folder/assets/server4.jpg" alt="server" />
+    </div>
+    <div class="server-logo" data-servidorid="5">
+      <span class="message__count">25</span>
+      <img src="/static_folder/assets/server5.jpg" alt="server" />
+    </div>
+    <div id="agregarServidorModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="cerrarModal">&times;</span>
+        <h2>Agregar Servidor</h2>
+        <form id="agregarServidorForm">
+          <label for="nombreServidor">Nombre del Servidor:</label>
+          <input type="text" id="nombreServidor" required>
+          <br>
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" rows="4"></textarea>
+          <br>
+          <br>
+          <button id="agregarServidorButton">Agregar Servidor</button>
+        </form>
+      </div>
+    </div>
+      <div class="server-logo add-server">
+        <i class="fas fa-plus-circle" id="crearServidorButton" aria-hidden="true"></i>
+      </div>
+      <div id="buscarServidoresModal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="cerrarBuscarServidoresModal">&times;</span>
+          <h2 id="listaServidores">Lista de Servidores</h2>
+          <div id="resultadosServidores"></div>
+        </div>
+      </div>
+      <div id="obtenerServidores" class="server-logo search-server" onclick="abrirBuscarServidoresModal(event)">
+        <i class="fa fa-compass"></i>
+      </div>
+      
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar__top">
+      <input type="text" placeholder="buscar o iniciar una conversacion" />
+    </div>
+    <div class="sidebar__icon">
+      <i class="fas fa-user-friends fa-lg"></i>
+      <span>Amigos</span>
+    </div>
+    <div class="sidebar__icon">
+      <i class="fas fa-compact-disc fa-lg"></i>
+      <span>Nitro</span>
+    </div>
+    <div class="sidebar__users">
+      <div class="sidebar__usersHeader">
+        <div id="crearCanalModal" class="modal">
+          <div class="modal-content">
+            <span class="close" id="cerrarCrearCanalModal">&times;</span>
+            <h2>Crear Canal</h2>
+            <form id="crearCanalForm">
+              <label for="nombreCanal">Nombre del Canal:</label>
+              <input type="text" id="nombreCanal" required>
+              <br>
+              <label for="descripcionCanal">Descripción:</label>
+              <textarea id="descripcionCanal" rows="4"></textarea>
+              <br>
+              <label for="fechaCreacion">Fecha de Creación:</label>
+              <input type="text" id="fechaCreacion" disabled>
+              <br>
+              <button type="submit" onclick="crearCanalYAgregarAlUI(param1, param2, param3, param4)">Crear Canal</button>
+            </form>
+          </div>
+        </div>
+        <div class="sidebar__header">
+          <h4>Canales</h4>
+        </div>
+        <i class="fas fa-plus sidebar__addUser" id="crearCanalBtn"></i>
+      </div>
+      <div>
+        <ul class="icon_list" style="list-style: none;">  </ul>
+        <div class="sidebar__user" data-servidorid="1">
+          <div>
+              <span class="status" data-canal="1"></span>
+              <img src="/static_folder/assets/user1.jpg" alt="avatar" />
+          </div>
+          <h4>Progra-2-UPATECO</h4>
+      </div>
+      <div class="sidebar__user" data-servidorid="2">
+          <div>
+              <span class="status" data-canal="2"></span>
+              <img src="/static_folder/assets/user2.jpg" alt="avatar" />
+          </div>
+          <h4>Kimetsu</h4>
+      </div>
+      <div class="sidebar__user" data-servidorid="3">
+          <div>
+              <span class="status" data-canal="3"></span>
+              <img src="/static_folder/assets/server1.jpg" alt="avatar" />
+          </div>
+          <h4>Nicordas</h4>
+      </div>
+      </div>
+    </div>
+    <div class="sidebar__profile">
+      <div>
+        <span class="status"></span>
+        <img src="/static_folder/assets/userdefault.jpg" alt="avatar" />
+      </div>
+      <div class="sidebar__profileInfo">
+        <h3 id="usernamePlaceholder"></h3>
+        <p>#1234</p>
+      </div>
+      <div class="sidebar__profileIcons">
+        <i class="fas fa-microphone"></i>
+        <i class="fas fa-headset"></i>
+        <i class="fas fa-cog"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat">
+    <div>
+      <div class="chatHeader">
+        <div class="chatHeader__left">
+          <span class="chatHeader__Dm">@</span>
+          <h3>Nicordas</h3>
+        </div>
+        <div class="chatHeader__right">
+          <i class="fas fa-phone-volume fa-lg"></i>
+          <i class="fas fa-video fa-lg"></i>
+          <i class="fas fa-thumbtack fa-lg"></i>
+          <i class="fas fa-user-plus fa-lg"></i>
+
+          <div class="search">
+            <input type="text" placeholder="buscar" />
+            <i class="fas fa-search fa-lg"></i>
+          </div>
+          <i class="fas fa-inbox fa-lg"></i>
+          <i class="fas fa-question-circle fa-lg"></i>
+        </div>
+      </div>
+    </div>
+    <div class="chat__messages">
+      <div class="message">
+        <img src="/static_folder/assets/server1.jpg" alt="avatar">
+        <div class="message__info">
+          <h4>Nicordas <span class="message__timestamp">22/09/2023</span></h4>
+          <p>Holis !!! que tas ? como va ese Discordia??</p>
+        </div>
+      </div>
+    </div>
+    <div class="chat__input">
+      <i class="fas fa-plus-circle fa-lg"></i>
+      <form id="message-form" onsubmit="sendMessage(event)">
+        <input type="hidden" id="canal_id" value="" />
+        <input type="hidden" id="servidor_id" value="" />
+        <input type="text" id="message-input" placeholder="Escribe tu mensaje aquí" />
+        <button class="chat__inputButton" type="submit">Enviar</button>
+      </form>
+      <div class="chat__inputIcons">
+        <i class="fas fa-gift fa-lg"></i>
+        <i class="fas fa-file-image fa-lg"></i>
+        <i class="fas fa-laugh fa-lg"></i>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="/static_folder/js/servidores.js"></script>
+  <script src="/static_folder/js/script.js"></script>
+  <script src="/static_folder/js/perfil.js"></script>
+  <script src="/static_folder/js/canales.js"></script>
+</body>
+</html>

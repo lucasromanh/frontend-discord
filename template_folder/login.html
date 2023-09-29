@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de sesión</title>
+  <link rel="stylesheet" href="/static_folder/css/login.css">
+  <style>
+    body {
+      background-image: url("/static_folder/assets/fondo.jpg");
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+        <div class="main-container">
+            <h2>¡Hola de nuevo!</h2>
+            <p>¡Nos alegramos mucho de volverte a ver!</p>
+            <form class="login-form" id="login-form">
+              <input type="text" placeholder="Correo electrónico*" id="username" required>
+              <input type="password" placeholder="Contraseña*" id="password" required>
+              <button type="submit" class="login-button">Iniciar sesión</button>
+            </form>
+            <p>¿Has olvidado tu contraseña? <a href="#">Recupérala aquí</a></p>
+            <p>¿No tienes una cuenta? <a href="#" id="register-link" class="register-button">Regístrate</a></p>
+          </div>
+      <div class="side-container">
+        <div class="qr-container">
+          <img src="/static_folder/assets/qr.jpg" alt="Código QR" class="qr-image">
+          <p class="qr-text">Iniciar sesión con código QR</p>
+          <p class="qr-info">Escanealo con la aplicación móvil de Discord para iniciar sesión de forma instantánea</p>
+        </div>
+    </div>
+  </div>
+  <script src="/static_folder/js/index.js"></script>
+</body>
+</html>

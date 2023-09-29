@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi perfil</title>
+  <link rel="stylesheet" href="/static_folder/css/perfil.css">
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-header">
+        <img class="profile-avatar" src="/static_folder/assets/userdefault.jpg" alt="Avatar">
+        <h2 class="profile-fullname" id="fullnamePlaceholder">Nombre del Usuario</h2>
+      </div>
+      <div class="profile-info">
+        <p><strong>Nombre de usuario:</strong> <span id="usernamePlaceholder">Nombre de Usuario</span></p>
+        <button class="edit-button" id="editUsernameButton">Editar</button>
+      </div>
+      <hr>
+      <div class="profile-info">
+        <p><strong>Nombre:</strong> <span id="nombrePlaceholder">Nombre</span></p>
+        <button class="edit-button" id="editNombreButton">Editar</button>
+      </div>
+      <hr>
+      <div class="profile-info">
+        <p><strong>Apellido:</strong> <span id="apellidoPlaceholder">Apellido</span></p>
+        <button class="edit-button" id="editApellidoButton">Editar</button>
+      </div>
+      <hr>
+      <div class="profile-info">
+        <p><strong>Correo electrónico:</strong> <span id="correoPlaceholder">Correo Electrónico</span></p>
+        <button class="edit-button" id="editCorreoButton">Editar</button>
+      </div>
+    </div>
+  </div>
+  <script src="/static_folder/js/perfil.js"></script>
+</body>
+</html>

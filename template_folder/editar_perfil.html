@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="/static_folder/css/perfil.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <img src="/static_folder/assets/userdefault.jpg" alt="Avatar" class="profile-avatar">
+                <h1 class="profile-fullname">Nombre del Usuario</h1>
+            </div>
+            <div class="profile-info">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" placeholder="correo@example.com">
+                <button class="edit-button" id="editEmailButton">Editar</button>
+            </div>
+            <hr>
+            <div class="profile-info">
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" id="username" placeholder="NombreDeUsuario">
+                <button class="edit-button" id="editUsernameButton">Editar</button>
+            </div>
+            <hr>
+            <div class="profile-info">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Nombre">
+                <button class="edit-button" id="editNombreButton">Editar</button>
+            </div>
+            <hr>
+            <div class="profile-info">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" placeholder="Apellido">
+                <button class="edit-button" id="editApellidoButton">Editar</button>
+            </div>
+            <hr>
+            <div class="profile-info">
+                <label for="old-password">Contraseña Actual:</label>
+                <input type="password" id="old-password" placeholder="Contraseña Antigua">
+            </div>
+            <div class="profile-info">
+                <label for="new-password">Contraseña Nueva:</label>
+                <input type="password" id="new-password" placeholder="Contraseña Nueva">
+            </div>
+            <button class="save-changes-button">Guardar Cambios</button>
+            <button class="redirect-to-profile-button">Cancelar</button>
+        </div>
+    </div>
+    <script src="/static_folder/js/editar_perfil.js"></script>
+</body>
+</html>

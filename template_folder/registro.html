@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="/static_folder/css/registro.css">
+  <style>
+    body {
+      background-image: url("/static_folder/assets/fondo2.jpg");
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-card">
+        <h2>Crear una Cuenta</h2>
+            <form class="register-form" id="register-form">
+                <input type="email" id="email-input" placeholder="Correo electrónico" required>
+                <input type="text" id="username-input" placeholder="Nombre de usuario" required>
+                <input type="text" id="nombre-input" placeholder="Nombre" required>
+                <input type="text" id="apellido-input" placeholder="Apellido" required>
+                <input type="password" id="contraseña-input" placeholder="Contraseña" required>
+                <label for="birthdate">Fecha de Nacimiento:</label>
+                <div class="dob-container">
+                <select id="day" required>
+                    <option value="" disabled selected>día</option>
+                </select>
+                <select id="month" required>
+                    <option value="" disabled selected>mes</option>
+                </select>
+                <select id="year" required>
+                    <option value="" disabled selected>año</option>
+                </select>
+                </div>
+                <div class="button-container">
+                <button type="submit">Confirmar</button>
+                <button id="cancel-button" type="button">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<script src="/static_folder/js/registro.js"></script>
+</body>
+</html>

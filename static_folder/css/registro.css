@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #36393f;
+  }
+  
+  .register-container {
+    width: 400px;
+  }
+  
+  .register-card {
+    background-color: #23272a;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="email"],
+  input[type="text"],
+  input[type="password"],
+  select {
+    background-color: #2c2f33;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+  }
+  
+  input[type="email"]::placeholder,
+  input[type="text"]::placeholder,
+  input[type="password"]::placeholder {
+    color: #8e9297;
+  }
+  
+  label {
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  
+  .dob-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #7289da;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #677bc4;
+  }
+  
+  button[type="button"] {
+    background-color: #4f545c;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #40464b;
+  }
+  
